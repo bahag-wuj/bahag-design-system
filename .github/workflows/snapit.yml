@@ -28,7 +28,7 @@ jobs:
         uses: actions/github-script@v6
         id: pr_data
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           script: |
             try {
@@ -63,7 +63,7 @@ jobs:
       - name: Checkout pull request branch
         run: gh pr checkout ${{ github.event.issue.number }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Because changeset entries are consumed and removed on the
       # 'changeset-release/main' branch, we need to reset the files
@@ -75,14 +75,15 @@ jobs:
             git checkout origin/main -- .changeset
           fi
 
-      - name: Free up space on GitHub image
-        run: |
-          # Based on the official advice:
-          # https://github.com/actions/virtual-environments/issues/2840#issuecomment-790492173
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf "/usr/local/share/boost"
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      # - name: Free up space on GitHub image
+      # comment
+      #   run: |
+      #     # Based on the official advice:
+      #     # https://github.com/actions/virtual-environments/issues/2840#issuecomment-790492173
+      #     sudo rm -rf /usr/share/dotnet
+      #     sudo rm -rf /opt/ghc
+      #     sudo rm -rf "/usr/local/share/boost"
+      #     sudo rm -rf "$AGENT_TOOLSDIRECTORY"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -90,7 +91,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: yarn 
 
       - name: Create an .npmrc
         env:
@@ -101,9 +102,9 @@ jobs:
           EOF
 
       - name: Create and publish snapshot release
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           script: |
             const execa = require('execa')
