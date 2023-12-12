@@ -65,7 +65,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           yarn changeset version --snapshot ${{ github.ref }}
-          changeset publish --tag ${{ github.ref }}
+          yarn release --tag ${{ github.ref }}
 
       - name: Add final reaction
         uses: peter-evans/create-or-update-comment@v2
