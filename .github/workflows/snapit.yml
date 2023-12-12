@@ -62,11 +62,13 @@ jobs:
 
       # https://github.com/changesets/changesets/blob/main/docs/snapshot-releases.md
       - name: Create and publish snapshot release
+        uses: changesets/action@v1
+        with:
+          version: yarn version-packages -- --snapshot snapshot-release
+          publish: yarn release -- --tag snapshot-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          yarn version-packages -- --snapshot snapshot-release
-          yarn release -- --tag snapshot-release
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Add final reaction
         uses: peter-evans/create-or-update-comment@v2
