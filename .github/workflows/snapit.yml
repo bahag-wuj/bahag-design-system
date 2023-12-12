@@ -65,8 +65,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          yarn version-packages --snapshot 
-          yarn release --tag snapshottag
+          yarn version-packages -- --snapshot snapshot-release
+          yarn release -- --tag snapshot-release
 
       - name: Add final reaction
         uses: peter-evans/create-or-update-comment@v2
