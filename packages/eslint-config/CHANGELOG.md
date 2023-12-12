@@ -1,5 +1,11 @@
 # @bahag-wuj/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- [`24273cc`](https://github.com/bahag-buttf/bahag-design-system/commit/24273cc1e8d3a79f84f35d8ce9896068d0f65156) Thanks [@bahag-wuj](https://github.com/bahag-wuj)! - update config
+
 ## 0.0.7
 
 ### Patch Changes
