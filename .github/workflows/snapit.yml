@@ -36,15 +36,15 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-#      # Because changeset entries are consumed and removed on the
-#      # 'changeset-release/main' branch, we need to reset the files
-#      # so the following 'changeset version --snapshot' command will
-#      # regenerate the package version bumps with the snapshot releases
-#      - name: Reset changeset entries on changeset-release/main branch
-#        run: |
-#          if [[ $(git branch --show-current) == 'changeset-release/main' ]]; then
-#            git checkout origin/main -- .changeset
-#          fi
+      # Because changeset entries are consumed and removed on the
+      # 'changeset-release/main' branch, we need to reset the files
+      # so the following 'changeset version --snapshot' command will
+      # regenerate the package version bumps with the snapshot releases
+      - name: Reset changeset entries on changeset-release/main branch
+        run: |
+          if [[ $(git branch --show-current) == 'changeset-release/main' ]]; then
+            git checkout origin/main -- .changeset
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
