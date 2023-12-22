@@ -1,5 +1,11 @@
 # @repo/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- [`63b89ab`](https://github.com/bahag-buttf/bahag-design-system/commit/63b89ab01781894454dd0cf9f0abdb104957c9b0) Thanks [@bahag-wuj](https://github.com/bahag-wuj)! - update ui
+
 ## 0.1.1
 
 ### Patch Changes
