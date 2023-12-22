@@ -1,0 +1,37 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "json": {
+      "transformGroup": "js",
+      "buildPath": "build/json/",
+      "files": [
+        {
+          "destination": "style_dictionary.json",
+          "format": "json/flat"
+        }
+      ]
+    },
+    "flutter-dart": {
+      "transformGroup": "flutter",
+      "buildPath": "build/flutter/",
+      "files": [
+        {
+          "destination": "style_dictionary.dart",
+          "format": "flutter/class.dart",
+          "className": "StyleDictionary",
+          "filter": {}
+        }
+      ]
+    }
+  }
+}
