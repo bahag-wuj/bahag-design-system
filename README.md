@@ -79,3 +79,7 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+## Questions 
+- what is the initial version (when the package is just created) -> It seems to be `0.1.0` as in a initalized storybook package
+- directly add this [snapshot package](https://github.com/bahag-wuj/bahag-design-system/pull/25#issuecomment-1867575902) to `sf-storybook` not working? - it's github registry not npm registry - now how can I add this package in `sf-storybook`?
