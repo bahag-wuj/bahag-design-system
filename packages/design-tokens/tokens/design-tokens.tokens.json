@@ -1,0 +1,38 @@
+{
+  "Primitives": {
+    "colors": {
+      "neutrals": {
+        "--bah-color-grey-700": {
+          "type": "color",
+          "value": "#303233ff",
+          "blendMode": "normal",
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "mode": "Default",
+              "collection": "01. Primitives",
+              "scopes": ["ALL_SCOPES"],
+              "variableId": "VariableID:174:3",
+              "exportKey": "variables"
+            }
+          }
+        },
+        "brand": {
+          "--bah-color-brand-primary": {
+            "type": "color",
+            "value": "#ee1f26ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "mode": "Default",
+                "collection": "01. Primitives",
+                "scopes": ["ALL_SCOPES"],
+                "variableId": "VariableID:173:4",
+                "exportKey": "variables"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
