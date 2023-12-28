@@ -1,0 +1,38 @@
+name: Print Client Payload Tokens
+
+on:
+  push:
+    branches:
+      - feature/3-add-webhook-workflow
+    paths:
+      - 'design-tokens/design-tokens.json'
+
+jobs:
+  print-client-payload-tokens:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get webhook data
+        run: |
+          curl https://api.github.com/repos/bahag-wuj/bahag-design-system/dispatches \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "event_type": "design-tokens",
+            "payload": {
+              "variables": [
+                {
+                  "variableName": "myVariableName",
+                  "variableValue": "myVariableValue",
+                  "variableType": "string"
+                }
+              ]
+            }
+          }'
+
+      - name: Print client payload tokens
+        run: echo "client_payload.tokens"
