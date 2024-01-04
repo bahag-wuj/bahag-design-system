@@ -12,6 +12,10 @@
     "next.js",
     "react-internal.js"
   ],
+  "scripts": {
+    "format-tokens": "chmod +x format.sh && ./format.sh",
+    "build": "style-dictionary build"
+  },
   "devDependencies": {
     "@vercel/style-guide": "^5.1.0",
     "eslint-config-turbo": "^1.10.12",
